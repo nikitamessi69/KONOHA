@@ -3,4 +3,16 @@
 //a = 2 b = 10 -> max = 10
 //a = -9 b = -3 -> max = -3
 
+Console.WriteLine("Введите первое число: ");
+int a = int.Parse(Console.ReadLine()!);
+Console.WriteLine("Введите первое число: ");
+int b = int.Parse(Console.ReadLine()!);
 
+if (a>b)
+{
+    Console.WriteLine("Первое число " + a + " больше, чем второе " + b);
+}
+else
+{
+    Console.WriteLine("Второе число " + b + " больше, чем первое " + a);
+}
