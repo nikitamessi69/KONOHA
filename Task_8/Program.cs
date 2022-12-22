@@ -2,3 +2,13 @@
 //5 -> 2, 4
 //8 -> 2, 4, 6, 8
 
+int i = 1;
+Console.Write("Введите число: ");
+int N = Convert.ToInt32(Console.ReadLine()!);
+
+while (i <= N)
+{
+    if(i % 2 ==0)
+    Console.Write(i + ", ");
+    i ++;
+}
