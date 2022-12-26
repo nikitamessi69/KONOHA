@@ -4,14 +4,9 @@
 918 -> 1
 */
 
-int number = Console.WriteLine("Введите трехзначное число: ");
-int amount = number.ToString().Length;
-
-if (amount < 3 || amount > 3)
+Console.WriteLine("Введите трехзначное число: ");
+int RandomNum = Convert.ToInt32(Console.ReadLine());
+int result = ((RandomNum / 10) % 10);
 {
-    Console.WriteLine("Вы ввели не трехзначное число");
-}
-else
-{
-    Console.WriteLine(InCenter(number));
+    Console.WriteLine($"Вторая цифра числа: {result}");
 }
