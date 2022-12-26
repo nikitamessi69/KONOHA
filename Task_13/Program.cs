@@ -3,4 +3,15 @@
 78 -> третьей цифры нет
 32679 -> 6
 */
+Console.Write("Введите любое число: ");
+int num = Convert.ToInt32(Console.ReadLine());
 
+if (num <= 2)
+{
+    Console.WriteLine("Третьей цифры нет");
+}
+else
+{
+num = num % 10;
+    Console.WriteLine($"Третья цифра введённого числа: {num}");
+}
