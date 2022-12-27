@@ -4,3 +4,18 @@
 23432 -> да
 */
 
+Console.Write("Введите пятизначное число: ");
+string randomNumb = Console.ReadLine();
+int len = randomNumb.Length;
+
+if (len == 5)
+{
+    if (randomNumb[0] == randomNumb[4] && randomNumb[1] == randomNumb[3])
+    {
+        Console.WriteLine($"{randomNumb} - палиндром!");
+    }
+    else
+    {
+       Console.WriteLine($"{randomNumb} - не палиндром!"); 
+    }
+}
