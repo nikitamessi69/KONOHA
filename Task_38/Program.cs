@@ -23,9 +23,6 @@ for (int i = 0; i < numbers.Length; i++)
         }
 }
 
-Console.WriteLine($"Всего {numbers.Length} чисел. Максимальное значение = {max}, минимальное значение = {min}");
-Console.WriteLine($"Разница между максимальным и минимальным значением = {max - min}");
-
 void createArrayNum(double[] numbers)
 {
     for(int i = 0; i < numbers.Length; i++)
@@ -33,6 +30,7 @@ void createArrayNum(double[] numbers)
             numbers[i] = Convert.ToDouble(new Random().Next(100,1000)) / 100;
         }
 }
+
 void printArray(double[] numbers)
 {
     Console.Write("[");
@@ -46,3 +44,5 @@ void printArray(double[] numbers)
         }
     Console.WriteLine("]");
 }
+Console.WriteLine($"Всего {numbers.Length} чисел. Максимальное значение = {max}, минимальное значение = {min}");
+Console.WriteLine($"Разница между максимальным и минимальным значением = {max - min}");
