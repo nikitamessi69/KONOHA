@@ -22,7 +22,13 @@ for (int i = 0; i < numbers.Length; i++)
             min = numbers[i];
         }
 }
-
+/*void printColor(string data)
+{
+    Console.ForegroundColor = ConsoleColor.DarkRed;
+    Console.Write(data);
+    Console.ResetColor();
+}
+*/
 void createArrayNum(double[] numbers)
 {
     for(int i = 0; i < numbers.Length; i++)
