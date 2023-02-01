@@ -1,8 +1,13 @@
-﻿//Задача 46: Задайте двумерный массив размером m×n, заполненный случайными целыми числами.
+﻿/* Задача 47. Задайте двумерный массив размером m×n, заполненный случайными вещественными числами.
+m = 3, n = 4.
+0,5 7 -2 -0,2
+1 -3,3 8 -9,9
+8 7,8 -7,1 9
+*/
 
 int GetDataFromUser(string message)
 {
-    Console.ForegroundColor = ConsoleColor.Magenta;
+    Console.ForegroundColor = ConsoleColor.DarkGreen;
     Console.WriteLine(message);
     Console.ResetColor();
     int result = int.Parse(Console.ReadLine()!);
@@ -10,20 +15,18 @@ int GetDataFromUser(string message)
 }
 void printInColor(string data)
 {
-    Console.ForegroundColor = ConsoleColor.DarkCyan;
+    Console.ForegroundColor = ConsoleColor.DarkYellow;
     Console.Write(data);
     Console.ResetColor();
 }
 
-double[,] get2dDoubleArray(int colLength, int rowLength, int start, int finish)
+double[,] Get2dDoubleArray(int colLength, int rowLength, int start, int finish)
 {
     double[,] array = new double [colLength, rowLength];
-    //int divider = 100;
     for (int i = 0; i < colLength; i++)
     {
         for (int j = 0; j < rowLength; j++)
         {
-            //array[i,j] = new Random().Next(start * divider, (finish+1) * divider) / (divider + 0.0);
             array[i,j] = new Random().Next(start, finish+1) + Math.Round(new Random().NextDouble(),2);
         }
     }
@@ -50,5 +53,5 @@ void print2DArray(double[,] array)
 }
  int n = GetDataFromUser("Введите количество строк: ");
  int m = GetDataFromUser("Введите количество столбцов: ");
- double[,] array = get2dDoubleArray(n, m, 0, 100);
+ double[,] array = Get2dDoubleArray(n, m, -20, 20);
  print2DArray(array);
