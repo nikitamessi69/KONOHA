@@ -8,58 +8,41 @@
 17 -> такого числа в массиве нет
 */
 
-/*int GetDataFromUser(string message)
-{
-    Console.ForegroundColor = ConsoleColor.DarkGreen;
-    Console.WriteLine(message);
-    Console.ResetColor();
-    int result = int.Parse(Console.ReadLine()!);
-    return result;
-}
-void printInColor(string data)
-{
-    Console.ForegroundColor = ConsoleColor.DarkYellow;
-    Console.Write(data);
-    Console.ResetColor();
-}
+Console.Clear();
+int c = 5;
+int r = 5;
+int[,] array = new int[c, r];
 
-void FillArrayRandomNumbers(int[,] array)
+void FillArray(int[,] myArray)
 {
-    for (int i = 0; i < array.GetLength(0); i++)
+    for (int i = 0; i < myArray.GetLength(0); i++)
     {
-        for (int j = 0; j < array.GetLength(1); j++)
+        for (int j = 0; j < myArray.GetLength(1); j++)
         {
-            array[i, j] = new Random().Next(-100, 100) / 10;
-        }
-        if (n > numbers.GetLength(0) || m > numbers.GetLength(1))
-        {
-            Console.WriteLine("такого элемента нет");
-        }
-        else
-        {
-            Console.WriteLine($"значение элемента {n} строки и {m} столбца равно {numbers[n - 1, m - 1]}");
-        }
-        return result;
-    }
-}
-
-void PrintArray(int[,] array)
-{
-    Console.Write(" \t");
-    for (int j = 0; j < array.GetLength(1); j++)
-    {
-        printInColor(j + "\t");
-    }
-    Console.WriteLine();
-    for (int i = 0; i < array.GetLength(0); i++)
-    {
-        printInColor(i + "\t");
-        for (int j = 0; j < array.GetLength(1); j++)
-        {
-            Console.Write(array[i, j] + "\t");
+            array[i, j] = new Random().Next(0, 9);
+            Console.Write(array[i, j] + " ");
         }
         Console.WriteLine();
     }
 }
-FillArrayRandomNumbers(numbers);
-*/
+
+void FindElementArray(int[,] findElement, int userNum)
+{
+    bool find = false;
+    for (int i = 0; i < findElement.GetLength(0); i++)
+    {
+        for (int j = 0; j < findElement.GetLength(1); j++)
+        {
+            if (findElement[i, j] == userNum)
+                Console.WriteLine("Искомый элемент расположен в координатах " + j + " " + i);
+            find = true;
+            if (find == false)
+            Console.WriteLine("Такого числа в массиве нет!");
+        }
+    }
+}
+
+Console.WriteLine("Введите число: ");
+int num = Convert.ToInt32(Console.ReadLine());
+FillArray(array);
+FindElementArray(array, num);
