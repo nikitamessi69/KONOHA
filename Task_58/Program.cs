@@ -6,16 +6,64 @@
 Результирующая матрица будет:
 18 20
 15 18
-Задача 60. ...Сформируйте трёхмерный массив из неповторяющихся двузначных чисел. Напишите программу, которая будет построчно выводить массив, добавляя индексы каждого элемента.
-Массив размером 2 x 2 x 2
-66(0,0,0) 25(0,1,0)
-34(1,0,0) 41(1,1,0)
-27(0,0,1) 90(0,1,1)
-26(1,0,1) 55(1,1,1)
-Задача 62. Напишите программу, которая заполнит спирально массив 4 на 4. 
-Например, на выходе получается вот такой массив:
-01 02 03 04
-12 13 14 05
-11 16 15 06
-10 09 08 07
 */
+
+Console.Clear();
+int InputInt(string output)
+{
+    Console.Write(output);
+    return int.Parse(Console.ReadLine());
+}
+
+void FillArray(int[,] array)
+{
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
+        for (int j = 0; j < array.GetLength(1); j++)
+        {
+            array[i, j] = new Random().Next(1, 20);
+        }
+    }
+}
+
+void PrintArray(int[,] array)
+{
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
+        Console.Write("[ ");
+        for (int j = 0; j < array.GetLength(1); j++)
+        {
+            Console.Write(array[i, j] + " ");
+        }
+        Console.Write("]");
+        Console.WriteLine("");
+    }
+}
+
+int size = InputInt("Задайте размер матрицы: ");
+int[,] matrix1 = new int[size, size];
+int[,] matrix2 = new int[size, size];
+FillArray(matrix1);
+FillArray(matrix2);
+
+int[,] matrix3 = new int[size, size];
+
+for (int i = 0; i < size; i++)
+{
+    for (int j = 0; j < size; j++)
+    {
+        for (int k = 0; k < size; k++)
+        {
+            matrix3[i, j] = matrix3[i, j] + (matrix1[i, k] * matrix2[k, j]);
+        }
+    }
+}
+
+Console.WriteLine("|Первая матрица|");
+PrintArray(matrix1);
+Console.WriteLine();
+Console.WriteLine("|Вторая матрица|");
+PrintArray(matrix2);
+Console.WriteLine();
+Console.WriteLine("|Произведение двух матриц|");
+PrintArray(matrix3);
